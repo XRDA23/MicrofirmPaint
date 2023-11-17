@@ -1816,6 +1816,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tip: {fileID: 2079954043}
   _penSize: 5
+  penColors:
+  - {r: 0.031372547, g: 1, b: 0.7399696, a: 1}
+  - {r: 1, g: 0.34834325, b: 0.031372547, a: 1}
+  - {r: 1, g: 0.031372547, b: 0.7197572, a: 1}
+  colorChangeAction: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1116057411
 MonoBehaviour:
   m_ObjectHideFlags: 0
