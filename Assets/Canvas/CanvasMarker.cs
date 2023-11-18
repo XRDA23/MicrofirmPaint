@@ -1,5 +1,4 @@
 using System.Linq;
-using Canvas;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +13,7 @@ public class CanvasMarker : MonoBehaviour
    private float _tipHeight;
 
    private RaycastHit _touch;
-   private CanvasScript canvasScript;
+   private Canvas _canvas;
    private Vector2 _touchPos, _lastTouchPos;
    private bool _touchedLastFrame;
    private Quaternion _lastTouchRot;
@@ -64,30 +63,30 @@ public class CanvasMarker : MonoBehaviour
    }
    private void ProcessDrawing()
    {
-       if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) && _touch.transform.CompareTag("CanvasScript"))
+       if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) && _touch.transform.CompareTag("Canvas"))
        {
            HandleCanvasTouch();
        }
        else
        {
            _touchedLastFrame = false;
-           canvasScript = null;
+           _canvas = null;
        }
    }
 
    private void HandleCanvasTouch()
    {
-       if (canvasScript == null)
+       if (_canvas == null)
        {
-           canvasScript = _touch.transform.GetComponent<CanvasScript>();
+           _canvas = _touch.transform.GetComponent<Canvas>();
        }
 
        _touchPos = new Vector2(_touch.textureCoord.x, _touch.textureCoord.y);
 
-       var x = (int)(_touchPos.x * canvasScript.textureSize.x - (_penSize / 2));
-       var y = (int)(_touchPos.y * canvasScript.textureSize.y - (_penSize / 2));
+       var x = (int)(_touchPos.x * _canvas.textureSize.x - (_penSize / 2));
+       var y = (int)(_touchPos.y * _canvas.textureSize.y - (_penSize / 2));
 
-       if (x < 0 || x >= canvasScript.textureSize.x || y < 0 || y >= canvasScript.textureSize.y) return;
+       if (x < 0 || x >= _canvas.textureSize.x || y < 0 || y >= _canvas.textureSize.y) return;
 
        DrawPixels(x, y);
 
@@ -98,7 +97,7 @@ public class CanvasMarker : MonoBehaviour
 
    private void DrawPixels(int x, int y)
    {
-       canvasScript.texture.SetPixels(x, y, _penSize, _penSize, _colors);
+       _canvas.texture.SetPixels(x, y, _penSize, _penSize, _colors);
 
        if (_touchedLastFrame)
        {
@@ -106,10 +105,10 @@ public class CanvasMarker : MonoBehaviour
            {
                var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
-               canvasScript.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
+               _canvas.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
            }
        }
       
-       canvasScript.texture.Apply();
+       _canvas.texture.Apply();
    }
 }
