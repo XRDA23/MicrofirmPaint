@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,7 +8,6 @@ public class CanvasEraser : MonoBehaviour
     [SerializeField] private Material _canvasMat;
 
     private Renderer _renderer;
-    private Color _clearColor; 
     private Color[] _clearColors;
     private float _tipHeight;
 
@@ -23,9 +20,8 @@ public class CanvasEraser : MonoBehaviour
     void Start()
     {
         _renderer = _tip.GetComponent<Renderer>();
-        _clearColors = Enumerable.Repeat(_clearColor, _eraserSize * _eraserSize).ToArray();
+        _clearColors = Enumerable.Repeat(_canvasMat.color, _eraserSize * _eraserSize).ToArray();
         _tipHeight = _tip.localScale.y;
-        _clearColor = _canvasMat.color;
     }
 
     void Update()
