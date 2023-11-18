@@ -10,7 +10,7 @@ public class CanvasEraser : MonoBehaviour
     [SerializeField] private Material _canvasMat;
 
     private Renderer _renderer;
-    private Color _clearColor = Color.white; 
+    private Color _clearColor; 
     private Color[] _clearColors;
     private float _tipHeight;
 
