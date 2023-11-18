@@ -7,7 +7,7 @@ namespace Canvas
     {
         public Texture2D texture;
         public Vector2 textureSize = new Vector2(2048, 2048);
-        private bool isWhite = false;
+        private bool isWhite;
 
         void Start()
         {
