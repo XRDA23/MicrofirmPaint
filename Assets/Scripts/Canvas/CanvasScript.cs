@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Canvas
@@ -12,7 +13,8 @@ namespace Canvas
             var r = GetComponent<Renderer>();
             texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
             r.material.mainTexture = texture;
-            gameObject.GetComponent<Material>().color = Color.white;
+            texture.SetPixels(Enumerable.Repeat(Color.white, (int) textureSize.x * (int) textureSize.y).ToArray());
+            texture.Apply();
         }
     }
 }
