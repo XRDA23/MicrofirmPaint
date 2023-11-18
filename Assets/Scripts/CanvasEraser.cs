@@ -34,7 +34,7 @@ public class CanvasEraser : MonoBehaviour
     {
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
         {
-            if (_touch.transform.CompareTag("CanvasScript"))
+            if (_touch.transform.CompareTag("Canvas"))
             {
                 if (canvasScript == null)
                 {
