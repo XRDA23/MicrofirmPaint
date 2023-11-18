@@ -64,7 +64,7 @@ public class CanvasMarker : MonoBehaviour
    }
    private void ProcessDrawing()
    {
-       if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) && _touch.transform.CompareTag("CanvasScript"))
+       if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) && _touch.transform.CompareTag("Canvas"))
        {
            HandleCanvasTouch();
        }
