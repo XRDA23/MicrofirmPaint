@@ -7,6 +7,7 @@ public class CanvasEraser : MonoBehaviour
 {
     [SerializeField] private Transform _tip;
     [SerializeField] private int _eraserSize = 5;
+    [SerializeField] private Material _canvasMat;
 
     private Renderer _renderer;
     private Color _clearColor = Color.white; 
@@ -24,6 +25,7 @@ public class CanvasEraser : MonoBehaviour
         _renderer = _tip.GetComponent<Renderer>();
         _clearColors = Enumerable.Repeat(_clearColor, _eraserSize * _eraserSize).ToArray();
         _tipHeight = _tip.localScale.y;
+        _clearColor = _canvasMat.color;
     }
 
     void Update()
