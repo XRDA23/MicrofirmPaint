@@ -5,7 +5,7 @@ using UnityEngine;
 public class CanvasEraser : MonoBehaviour
 {
     [SerializeField] private Transform _tip;
-    [SerializeField] private int _eraserSize = 50;
+    [SerializeField] private int _eraserSize = 15;
 
     private Renderer _renderer;
     private Color _clearColor = Color.white; 
