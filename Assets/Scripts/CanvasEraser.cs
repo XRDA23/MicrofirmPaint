@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CanvasEraser : MonoBehaviour
 {
-    [SerializeField] private Transform _tip;
-    [SerializeField] private int _eraserSize = 50;
+    [SerializeField] private Collider _tip;
+    [SerializeField] private int _eraserSize = 15;
 
     private Renderer _renderer;
     private Color _clearColor = Color.white; 
@@ -22,7 +22,7 @@ public class CanvasEraser : MonoBehaviour
     {
         _renderer = _tip.GetComponent<Renderer>();
         _clearColors = Enumerable.Repeat(_clearColor, _eraserSize * _eraserSize).ToArray();
-        _tipHeight = _tip.localScale.y;
+        _tipHeight = _tip.transform.localScale.y;
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class CanvasEraser : MonoBehaviour
 
     private void Erase()
     {
-        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
+        if (Physics.Raycast(_tip.transform.position, transform.up, out _touch, _tipHeight))
         {
             if (_touch.transform.CompareTag("Canvas"))
             {
