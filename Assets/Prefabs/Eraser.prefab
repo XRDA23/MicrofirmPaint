@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee582535e002c742a4c44b288fa2870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tip: {fileID: 4302476067527831617}
+  _tip: {fileID: 6799174135510727736}
   _eraserSize: 15
 --- !u!1 &3821058629328700163
 GameObject:
