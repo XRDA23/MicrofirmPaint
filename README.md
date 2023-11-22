@@ -4,10 +4,10 @@ A virtual art studio created as a course assignment in VR for XR development in 
 ## Development Team
 The project group consists of four people:
 
-- [Aldís Eir Hansen](https://github.com/AlleyCatRacer) [^0]
-- [Lia Cicati](https://github.com/LiaCicati) [^1]
-- [Loredana Cicati](https://github.com/LoredanaCicati) [^2]
-- [Maria-Bianca Militaru](https://github.com/biancamilitaru) [^3]
+- [Aldís Eir Hansen](https://github.com/AlleyCatRacer)
+- [Lia Cicati](https://github.com/LiaCicati)
+- [Loredana Cicati](https://github.com/LoredanaCicati)
+- [Maria-Bianca Militaru](https://github.com/biancamilitaru)
 
 ## Sources
 - [VR Development for Oculus Quest](https://www.youtube.com/watch?v=MJjj-EzMVTc&list=PLi-PVxA9VifcdqzeQ1bkV_T5B-YuLKNII&index=11)
