@@ -11,8 +11,14 @@ The project group consists of four people:
 - [Maria-Bianca Militaru](https://github.com/biancamilitaru)
 
 ## Sources
+
+### Tutorials
 - [VR Development for Oculus Quest](https://www.youtube.com/watch?v=MJjj-EzMVTc&list=PLi-PVxA9VifcdqzeQ1bkV_T5B-YuLKNII&index=11)
 - [VR Hands](https://www.youtube.com/watch?v=ijcn-mIJL5s)
 - [Grab Objects in VR](https://www.youtube.com/watch?v=FyhNnbZR28I)
 - [Draw on Whiteboard](https://www.youtube.com/watch?v=sHE5ubsP-E8&t=1702s)
 - [VR Painting | Unity Tutorial for Oculus Quest](https://www.youtube.com/watch?v=UyGSOju9aWw)
+
+
+### Assets
+- [VR Hands](https://drive.google.com/file/d/1SSq7lK0l7C-HCJVDeOFJX_-yeOXzOAwa/view)
